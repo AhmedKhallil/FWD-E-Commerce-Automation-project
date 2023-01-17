@@ -5,11 +5,19 @@ import io.cucumber.java.en.When;
 import org.examples.projectPage.HomePage;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import io.cucumber.java.en.Given;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+import java.util.List;
 
 public class currency {
 
     HomePage homePage = new HomePage();
-
     String product;
 
     @When("Step 1 user select Euro currency from the dropdown list on the top left of home page")

@@ -4,8 +4,11 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import org.examples.projectPage.HomePage;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
+
 
 import java.time.Duration;
 
@@ -17,7 +20,7 @@ public class Slider {
     @When("user click on nokia slide")
     public void nokia()
     {
-        homePage.slider(Hooks.driver).click();
+        homePage.nokia_slider(Hooks.driver).click();
         URL = homePage.URL(Hooks.driver);
     }
     @Then("user go to nokia url")

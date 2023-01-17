@@ -3,11 +3,14 @@ package org.examples.testArrange;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.examples.projectPage.HomePage;
+
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
 import java.util.ArrayList;
+
 
 public class follow {
     HomePage homePage = new HomePage();

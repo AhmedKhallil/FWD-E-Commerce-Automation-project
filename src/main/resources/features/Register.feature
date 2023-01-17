@@ -1,5 +1,5 @@
 @smoke
-Feature: Register | users could register with new accounts
+Feature: regiister | users could register with new accounts
   Scenario: guest user could register with valid data successfully
     Given Step 1 user go to register page
     And Step 2 user select gender type

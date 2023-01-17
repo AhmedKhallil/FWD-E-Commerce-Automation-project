@@ -1,5 +1,5 @@
 @smoke
-Feature: F08_Wishlist | Success message appears when clicking on wishlist button
+Feature: list | Success message appears when clicking on wishlist button
   Scenario: success message appears in green background when user add item to wishlist
     When user click on wishlist icon
     Then success message is displayed
@@ -10,3 +10,4 @@ Feature: F08_Wishlist | Success message appears when clicking on wishlist button
     And user wait until this success message with green color to disappear
     When click on Wishlist Tab
     Then Verify qty value bigger than 0
+

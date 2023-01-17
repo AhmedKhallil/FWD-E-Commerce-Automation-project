@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.examples.projectPage.HomePage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,13 +20,13 @@ public class list {
 
     @When("user click on wishlist icon")
     public void add_wishlist() {
-        homePage.logo(Hooks.driver).click();
+        homePage.wish_logo(Hooks.driver).click();
     }
 
     @Then("success message is displayed")
     public void validate_msg() {
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(homePage.confirmmessage(Hooks.driver).getText(),
+        softAssert.assertEquals(homePage.success_msg(Hooks.driver).getText(),
                 "The product has been added to your wishlist");
         softAssert.assertAll();
     }
@@ -49,18 +50,18 @@ public class list {
     public void delay() throws InterruptedException {
         Thread.sleep(1000);
         WebDriverWait wait = new WebDriverWait(Hooks.driver, Duration.ofMillis(5000));
-        wait.until(ExpectedConditions.invisibilityOf(homePage.successbar(Hooks.driver)));
+        wait.until(ExpectedConditions.invisibilityOf(homePage.success_Bar(Hooks.driver)));
     }
 
     @When("click on Wishlist Tab")
     public void wishlist()
     {
-        homePage.listbutton(Hooks.driver).click();
+        homePage.wishlist_btn(Hooks.driver).click();
     }
     @Then("Verify qty value bigger than 0")
     public void qty()
     {
-        qty = Integer.parseInt(homePage.Q(Hooks.driver).getAttribute("value"));
+        qty = Integer.parseInt(homePage.Qty(Hooks.driver).getAttribute("value"));
         System.out.println("The quantity is: "+ qty);
         if (qty > 0)
         {

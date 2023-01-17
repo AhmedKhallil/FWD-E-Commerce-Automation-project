@@ -6,13 +6,21 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.examples.projectPage.HomePage;
 import org.examples.projectPage.LoginPage;
+import org.openqa.selenium.By;
+
 import org.openqa.selenium.support.Color;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
+
+
+import java.time.Duration;
 
 public class Login {
 
     HomePage homePage = new HomePage();
-     LoginPage login = new LoginPage();
+    LoginPage login = new LoginPage();
 
     @Given("Step 1 user go to login page")
     public void setLogin()

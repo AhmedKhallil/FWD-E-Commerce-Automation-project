@@ -1,22 +1,28 @@
 package org.examples.projectPage;
 
+import org.examples.testArrange.Hooks;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+
+import static org.examples.testArrange.Hooks.driver;
 
 public class RegisterPage {
 
-    //    create WebElement method to register button
-
     public WebElement GenderMale(WebDriver driver)
     {
-        WebElement Male= driver.findElement(By.id("gender-male"));
-        return (Male);
+        WebElement GenderMale= driver.findElement(By.id("gender-male"));
+        return (GenderMale);
     }
-    public WebElement Female(WebDriver driver)
+    public WebElement GenderFemale(WebDriver driver)
     {
-        WebElement Female= driver.findElement(By.id("gender-female"));
-        return (Female);
+        WebElement GenderFemale= driver.findElement(By.id("gender-female"));
+        return (GenderFemale);
     }
 
     public WebElement FirstName(WebDriver driver)
@@ -33,18 +39,18 @@ public class RegisterPage {
 
     public WebElement DateOfBirthDay(WebDriver driver)
     {
-        WebElement BirthDay = driver.findElement(By.name("DateOfBirthDay"));
-        return BirthDay;
+        WebElement DateOfBirthDay = driver.findElement(By.name("DateOfBirthDay"));
+        return DateOfBirthDay;
     }
     public WebElement DateOfBirthMonth(WebDriver driver)
     {
-        WebElement BirthMonth = driver.findElement(By.name("DateOfBirthMonth"));
-        return BirthMonth;
+        WebElement DateOfBirthMonth = driver.findElement(By.name("DateOfBirthMonth"));
+        return DateOfBirthMonth;
     }
-    public WebElement BirthYear(WebDriver driver)
+    public WebElement DateOfBirthYear(WebDriver driver)
     {
-        WebElement BirthYear = driver.findElement(By.name("DateOfBirthYear"));
-        return BirthYear;
+        WebElement DateOfBirthYear = driver.findElement(By.name("DateOfBirthYear"));
+        return DateOfBirthYear;
     }
 
     public WebElement Email(WebDriver driver)
@@ -63,22 +69,22 @@ public class RegisterPage {
         WebElement ConfirmPassword = driver.findElement(By.id("ConfirmPassword"));
         return (ConfirmPassword);
     }
-    public WebElement Registerbutton(WebDriver driver)
+    public WebElement Register_BTN(WebDriver driver)
     {
-        WebElement Registerbutton = driver.findElement(By.id("register-button"));
-        return (Registerbutton);
+        WebElement BTN = driver.findElement(By.id("register-button"));
+        return (BTN);
     }
 
-    public WebElement SuccessfulMessage(WebDriver driver)
+    public WebElement Confirmation_Message(WebDriver driver)
     {
-        WebElement SuccessfulMessage = driver.findElement(By.className("result"));
-        return (SuccessfulMessage);
+        WebElement msg = driver.findElement(By.className("result"));
+        return (msg);
     }
 
-    public String color(WebDriver driver)
+    public String Confirmation_color(WebDriver driver)
     {
-        String color = driver.findElement(By.className("register-continue-button")).getAttribute("completed");
-        return (color);
+        String msg = driver.findElement(By.className("register-continue-button")).getAttribute("completed");
+        return (msg);
     }
 
     public WebElement Continue(WebDriver driver)

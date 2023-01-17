@@ -4,15 +4,14 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
 import org.examples.projectPage.HomePage;
 import org.examples.projectPage.RegisterPage;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 
+
 public class Register {
+
     HomePage homePage = new HomePage();
     RegisterPage register = new RegisterPage();
 
@@ -46,7 +45,7 @@ public class Register {
         Select Month = new Select(register.DateOfBirthMonth(Hooks.driver));
         Month.selectByValue("7");
 
-        Select Year = new Select(register.BirthYear(Hooks.driver));
+        Select Year = new Select(register.DateOfBirthYear(Hooks.driver));
         Year.selectByValue("1999");
     }
 
@@ -65,24 +64,20 @@ public class Register {
     @When("Step 7 user clicks on register button")
     public void Register_BTN()
     {
-        register.Registerbutton(Hooks.driver).click();
+        register.Register_BTN(Hooks.driver).click();
     }
 
     @Then("Step 8 success message is displayed")
     public void Message() throws InterruptedException {
         SoftAssert soft_assert = new SoftAssert();
 
-        soft_assert.assertEquals(SuccessfulMessage(Hooks.driver).getText().contains("Your registration completed")
-                ,true,"something happens wrong ");
+        soft_assert.assertEquals(register.Confirmation_Message(Hooks.driver).getText().contains("Your registration completed")
+                ,true,"moshkela");
 
-        soft_assert.assertEquals("rgba(76, 177, 124, 1)",register.SuccessfulMessage(Hooks.driver).getCssValue("color"));
-        System.out.println(register.SuccessfulMessage(Hooks.driver).getCssValue("color"));
+        soft_assert.assertEquals("rgba(76, 177, 124, 1)",register.Confirmation_Message(Hooks.driver).getCssValue("color"));
+        System.out.println(register.Confirmation_Message(Hooks.driver).getCssValue("color"));
 
         soft_assert.assertAll();
-    }
-
-    private Alert SuccessfulMessage(WebDriver driver) {
-        return null;
     }
 
 

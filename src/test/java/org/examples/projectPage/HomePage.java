@@ -1,9 +1,12 @@
 package org.examples.projectPage;
 
+import org.examples.testArrange.Hooks;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HomePage {
@@ -22,8 +25,8 @@ public class HomePage {
 
     public WebElement currency_Euro (WebDriver driver)
     {
-        WebElement currency = driver.findElement(By.id("customerCurrency"));
-        return currency;
+        WebElement currency_Euro = driver.findElement(By.id("customerCurrency"));
+        return currency_Euro;
     }
 
     public List<WebElement> actual_Price (WebDriver driver)
@@ -34,14 +37,14 @@ public class HomePage {
 
     public WebElement search_Box (WebDriver driver)
     {
-        WebElement search = driver.findElement(By.className("ui-autocomplete-input"));
-        return search;
+        WebElement search_box = driver.findElement(By.className("ui-autocomplete-input"));
+        return search_box;
     }
 
-    public WebElement searchbutton (WebDriver driver)
+    public WebElement search_BTN (WebDriver driver)
     {
-        WebElement searchbutton = driver.findElement(By.className("search-box-button"));
-        return searchbutton;
+        WebElement search_btn = driver.findElement(By.className("search-box-button"));
+        return search_btn;
     }
 
     public String URL (WebDriver driver)
@@ -64,29 +67,29 @@ public class HomePage {
 
     public WebElement sku_locator (WebDriver driver)
     {
-        WebElement SKU = driver.findElement(By.className("additional-details"));
-        return SKU;
+        WebElement sku_locator = driver.findElement(By.className("additional-details"));
+        return sku_locator;
     }
 
     public List<WebElement> main_Categories (WebDriver driver)
     {
-        List<WebElement> maincategory = driver.findElements(By.xpath("//ul[@class=\"top-menu notmobile\"]/li"));
-        return maincategory;
+        List<WebElement> main_categories = driver.findElements(By.xpath("//ul[@class=\"top-menu notmobile\"]/li"));
+        return main_categories;
     }
 
     public List<WebElement> sub_Categories (WebDriver driver ,int selectedMainCat)
     {
-        List<WebElement> subcategory = driver.findElements(By.xpath("(//ul[@class='top-menu notmobile']//ul)["+selectedMainCat+"]/li"));
-        return subcategory;
+        List<WebElement> sub_categories = driver.findElements(By.xpath("(//ul[@class='top-menu notmobile']//ul)["+selectedMainCat+"]/li"));
+        return sub_categories;
     }
 
     public WebElement page_Title (WebDriver driver)
     {
-        WebElement pagetitle = driver.findElement(By.className("page-title"));
-        return pagetitle;
+        WebElement page_title = driver.findElement(By.className("page-title"));
+        return page_title;
     }
 
-    public WebElement slider(WebDriver driver)
+    public WebElement nokia_slider(WebDriver driver)
     {
         WebElement slider = driver.findElement(By.cssSelector("#nivo-slider > a:nth-child(1)"));
         return slider;
@@ -110,8 +113,8 @@ public class HomePage {
     }
     public WebElement rss(WebDriver driver)
     {
-        WebElement R = driver.findElement(By.linkText("RSS"));
-        return R;
+        WebElement rss = driver.findElement(By.linkText("RSS"));
+        return rss;
     }
     public WebElement Youtube(WebDriver driver)
     {
@@ -125,34 +128,34 @@ public class HomePage {
         return bar;
     }
 
-    public WebElement successbar (WebDriver driver)
+    public WebElement success_Bar (WebDriver driver)
     {
         WebElement bar = driver.findElement(By.xpath("//*[@id=\"bar-notification\"]/div"));
         return bar;
     }
 
-    public WebElement confirmmessage (WebDriver driver)
+    public WebElement success_msg (WebDriver driver)
     {
-        WebElement confirmmessage = driver.findElement(By.cssSelector("#bar-notification > div > p"));
-        return confirmmessage;
+        WebElement msg = driver.findElement(By.cssSelector("#bar-notification > div > p"));
+        return msg;
     }
 
-    public WebElement logo (WebDriver driver)
+    public WebElement wish_logo (WebDriver driver)
     {
-        WebElement logobutton = driver.findElement(By.cssSelector("body > div.master-wrapper-page > div.master-wrapper-content > div > div > div > div > div.product-grid.home-page-product-grid > div.item-grid > div:nth-child(3) > div > div.details > div.add-info > div.buttons > button.button-2.add-to-wishlist-button"));
-        return logobutton;
+        WebElement btn = driver.findElement(By.cssSelector("body > div.master-wrapper-page > div.master-wrapper-content > div > div > div > div > div.product-grid.home-page-product-grid > div.item-grid > div:nth-child(3) > div > div.details > div.add-info > div.buttons > button.button-2.add-to-wishlist-button"));
+        return btn;
     }
 
-    public WebElement listbutton (WebDriver driver)
+    public WebElement wishlist_btn (WebDriver driver)
     {
-        WebElement listbutton = driver.findElement(By.className("wishlist-label"));
-        return listbutton;
+        WebElement btn = driver.findElement(By.className("wishlist-label"));
+        return btn;
     }
 
-    public WebElement Q (WebDriver driver)
+    public WebElement Qty (WebDriver driver)
     {
-        WebElement Q = driver.findElement(By.className("qty-input"));
-        return Q;
+        WebElement qty = driver.findElement(By.className("qty-input"));
+        return qty;
     }
 
 

@@ -2,11 +2,14 @@ package org.examples.testArrange;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class Hooks {
 
@@ -27,7 +30,7 @@ public class Hooks {
     @After
     public void close_browser() throws InterruptedException {
         Thread.sleep(5000);
-       driver.quit();
+        driver.quit();
     }
 
 }

@@ -1,4 +1,5 @@
-Feature: Sliders| sliders should be clickable
+Feature: Slider | sliders should be clickable
+Feature: F06_Sliders | sliders should be clickable
   Scenario: first slider is clickable on home page
     When user click on nokia slide
     Then user go to nokia url

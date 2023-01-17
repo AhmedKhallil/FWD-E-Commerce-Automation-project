@@ -1,10 +1,17 @@
 package org.examples.testArrange;
 
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import org.examples.projectPage.HomePage;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+
+import java.util.List;
 
 public class Search {
     HomePage homePage = new HomePage();
@@ -16,7 +23,7 @@ public class Search {
     {
         title = "book";
         homePage.search_Box(Hooks.driver).sendKeys(title);
-        homePage.searchbutton(Hooks.driver).click();
+        homePage.search_BTN(Hooks.driver).click();
     }
 
 
@@ -25,7 +32,7 @@ public class Search {
     {
         title = "laptop";
         homePage.search_Box(Hooks.driver).sendKeys(title);
-        homePage.searchbutton(Hooks.driver).click();
+        homePage.search_BTN(Hooks.driver).click();
     }
 
     @When("user search using product nike name")
@@ -33,7 +40,7 @@ public class Search {
     {
         title = "nike";
         homePage.search_Box(Hooks.driver).sendKeys(title);
-        homePage.searchbutton(Hooks.driver).click();
+        homePage.search_BTN(Hooks.driver).click();
     }
 
     @Then("user should be able to find items with product name")
@@ -54,21 +61,21 @@ public class Search {
     public void search_By_SCI_FAITH_sku() {
         sku = "SCI_FAITH";
         homePage.search_Box(Hooks.driver).sendKeys(sku);
-        homePage.searchbutton(Hooks.driver).click();
+        homePage.search_BTN(Hooks.driver).click();
     }
 
     @When("user search using product APPLE_CAM sku")
     public void search_By_APPLE_CAM_sku() {
         sku = "APPLE_CAM";
         homePage.search_Box(Hooks.driver).sendKeys(sku);
-        homePage.searchbutton(Hooks.driver).click();
+        homePage.search_BTN(Hooks.driver).click();
     }
 
     @When("user search using product SF_PRO_11 sku")
     public void search_By_SF_PRO_11_sku() {
         sku = "SF_PRO_11";
         homePage.search_Box(Hooks.driver).sendKeys(sku);
-        homePage.searchbutton(Hooks.driver).click();
+        homePage.search_BTN(Hooks.driver).click();
     }
 
     @Then("the product sku shown in product page should contains the sku that you are using in search")

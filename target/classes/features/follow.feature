@@ -3,7 +3,7 @@ Feature: follow | users could open followUs links
  Scenario Outline: user opens <social> link
   When user opens <social> link
   Then <social> page is opened in new tab
-   Examples:
+  Examples:
    |social|
    |facebook|
    |twitter |
